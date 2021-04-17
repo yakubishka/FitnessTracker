@@ -3,9 +3,11 @@ package tracker.scenes.users;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import tracker.architecture.BaseViewController;
 import tracker.model.User;
+import tracker.scenes.userchanges.ChangeUserDialogController;
 
-public class UsersListLayoutController {
+public class UsersListLayoutController extends BaseViewController {
 
   private UsersListPresenter presenter =  new UsersListPresenter();
 
@@ -25,6 +27,24 @@ public class UsersListLayoutController {
     userTableView.setItems(presenter.getUsers());
   }
 
+  @FXML
+  private void deleteUser() {
+    int selectedUserIndex = userTableView.getSelectionModel().getSelectedIndex();
+    presenter.deleteUserByIndex(selectedUserIndex);
+  }
 
+  @FXML
+  private void editUser() {
+    if (app != null)
+      ChangeUserDialogController.showAsDialog(app, true);
+  }
+
+  @FXML
+  private void addUser() {
+    if (app != null) {
+      ChangeUserDialogController.showAsDialog(app, false);
+      System.out.println("here");
+    }
+  }
 
 }

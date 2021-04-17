@@ -5,28 +5,16 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+import java.util.List;
+
 public class User {
 
-  private IntegerProperty index;
   private StringProperty firstName;
   private StringProperty lastName;
 
-  public User(int index, String firstName, String lastName) {
-    this.index = new SimpleIntegerProperty(index);
+  public User( String firstName, String lastName) {
     this.firstName = new SimpleStringProperty(firstName);
     this.lastName = new SimpleStringProperty(lastName);
-  }
-
-  public int getIndex() {
-    return index.get();
-  }
-
-  public IntegerProperty indexProperty() {
-    return index;
-  }
-
-  public void setIndex(int index) {
-    this.index.set(index);
   }
 
   public String getFirstName() {

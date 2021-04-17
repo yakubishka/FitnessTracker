@@ -4,10 +4,12 @@ public class Task {
 
   private long startDate;
   private long endDate;
+  private int caloriesPerTime;
 
-  public Task(long startDate, long endDate) {
+  public Task(long startDate, long endDate, int caloriesPerTime) {
     this.startDate = startDate;
     this.endDate = endDate;
+    this.caloriesPerTime = caloriesPerTime;
   }
 
   public long getStartDate() {
@@ -24,5 +26,13 @@ public class Task {
 
   public void setEndDate(long endDate) {
     this.endDate = endDate;
+  }
+
+  public int getCaloriesPerTime() {
+    return caloriesPerTime;
+  }
+
+  public void setCaloriesPerTime(int caloriesPerTime) {
+    this.caloriesPerTime = caloriesPerTime;
   }
 }

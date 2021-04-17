@@ -1,20 +1,28 @@
-tracker/utils/TimeUtils.java
- tracker.utils.TimeUtils
-tracker/utils/StringRes.java
- tracker.utils.StringRes
-tracker/utils/WindowConstants.java
- tracker.utils.WindowConstants
 tracker/scenes/timer/TimerController.java
  tracker.scenes.timer.TimerController
-tracker/model/Task.java
- tracker.model.Task
-tracker/app/MainApp.java
- tracker.app.MainApp
+tracker/utils/TimeUtils.java
+ tracker.utils.TimeUtils
 tracker/model/User.java
  tracker.model.User
+tracker/model/Task.java
+ tracker.model.Task
 tracker/scenes/users/UsersListPresenter.java
  tracker.scenes.users.UsersListPresenter
+tracker/utils/storage/PreferenceStorage.java
+ tracker.utils.storage.PreferenceStorage
+tracker/utils/StringRes.java
+ tracker.utils.StringRes
+tracker/utils/storage/JAXBConverter.java
+ tracker.utils.storage.JAXBConverter
+tracker/utils/storage/UsersPreferences.java
+ tracker.utils.storage.UsersPreferences
+tracker/utils/WindowConstants.java
+ tracker.utils.WindowConstants
+tracker/app/MainApp.java
+ tracker.app.MainApp
+tracker/architecture/BaseViewController.java
+ tracker.architecture.BaseViewController
+tracker/scenes/userchanges/ChangeUserDialogController.java
+ tracker.scenes.userchanges.ChangeUserDialogController
 tracker/scenes/users/UsersListLayoutController.java
  tracker.scenes.users.UsersListLayoutController
-tracker/utils/UsersPreferences.java
- tracker.utils.UsersPreferences

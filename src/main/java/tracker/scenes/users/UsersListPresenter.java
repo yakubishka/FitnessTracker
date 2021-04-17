@@ -9,12 +9,16 @@ public class UsersListPresenter {
   private ObservableList<User> users = FXCollections.observableArrayList();
 
   public UsersListPresenter() {
-    users.add(new User(0,"Petr", "Stepanov"));
-    users.add(new User(1, "Stepan", "Fedorov"));
+    users.add(new User("Petr", "Stepanov"));
+    users.add(new User("Stepan", "Fedorov"));
   }
 
   public ObservableList<User> getUsers() {
     return users;
+  }
+
+  public void deleteUserByIndex(int index) {
+    users.remove(index);
   }
 
 }
