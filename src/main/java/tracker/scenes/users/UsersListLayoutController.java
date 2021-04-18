@@ -36,14 +36,15 @@ public class UsersListLayoutController extends BaseViewController {
   @FXML
   private void editUser() {
     if (app != null)
-      ChangeUserDialogController.showAsDialog(app, true);
+      ChangeUserDialogController.showAsDialog(app, userTableView.getSelectionModel().getSelectedItem());
   }
 
   @FXML
   private void addUser() {
     if (app != null) {
-      ChangeUserDialogController.showAsDialog(app, false);
-      System.out.println("here");
+      User userToAdd = new User("", "");
+      ChangeUserDialogController.showAsDialog(app, userToAdd);
+      presenter.addToList(userToAdd);
     }
   }
 

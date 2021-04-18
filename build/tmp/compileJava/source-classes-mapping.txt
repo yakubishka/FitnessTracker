@@ -2,12 +2,13 @@ tracker/scenes/timer/TimerController.java
  tracker.scenes.timer.TimerController
 tracker/utils/TimeUtils.java
  tracker.utils.TimeUtils
-tracker/model/User.java
- tracker.model.User
+tracker/architecture/BaseViewController.java
+ tracker.architecture.BaseViewController
 tracker/model/Task.java
  tracker.model.Task
-tracker/scenes/users/UsersListPresenter.java
- tracker.scenes.users.UsersListPresenter
+tracker/app/DialogStageHelper.java
+ tracker.app.DialogStageHelper
+ tracker.app.DialogStageHelper$Builder
 tracker/utils/storage/PreferenceStorage.java
  tracker.utils.storage.PreferenceStorage
 tracker/utils/StringRes.java
@@ -20,8 +21,10 @@ tracker/utils/WindowConstants.java
  tracker.utils.WindowConstants
 tracker/app/MainApp.java
  tracker.app.MainApp
-tracker/architecture/BaseViewController.java
- tracker.architecture.BaseViewController
+tracker/scenes/users/UsersListPresenter.java
+ tracker.scenes.users.UsersListPresenter
+tracker/model/User.java
+ tracker.model.User
 tracker/scenes/userchanges/ChangeUserDialogController.java
  tracker.scenes.userchanges.ChangeUserDialogController
 tracker/scenes/users/UsersListLayoutController.java

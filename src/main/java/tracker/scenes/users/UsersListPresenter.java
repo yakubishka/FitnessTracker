@@ -21,4 +21,8 @@ public class UsersListPresenter {
     users.remove(index);
   }
 
+  public void addToList(User user) {
+    users.add(user);
+  }
+
 }
