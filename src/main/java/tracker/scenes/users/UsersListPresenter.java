@@ -6,10 +6,10 @@ import tracker.model.User;
 
 public class UsersListPresenter {
 
-  private ObservableList<User> users = FXCollections.observableArrayList();
+  private final ObservableList<User> users = FXCollections.observableArrayList();
 
   public UsersListPresenter() {
-    users.add(new User("Petr", "Stepanov"));
+    users.add(new User("Petr", "Stepanov", 24, 20, 12));
     users.add(new User("Stepan", "Fedorov"));
   }
 

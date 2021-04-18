@@ -1,7 +1,5 @@
 package tracker.utils.storage;
 
-import tracker.model.User;
-
 import java.io.File;
 import java.util.prefs.Preferences;
 

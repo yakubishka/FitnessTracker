@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tracker.scenes.users.UsersListLayoutController">
    <children>
@@ -17,15 +18,20 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView fx:id="userTableView" layoutX="-12.0" layoutY="50.0" prefHeight="398.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <columns>
-                      <TableColumn fx:id="firstNameColumn" prefWidth="75.0" text="First name" />
-                      <TableColumn fx:id="lastNameColumn" prefWidth="75.0" text="Last name" />
-                    </columns>
-                     <columnResizePolicy>
-                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-                     </columnResizePolicy>
-                  </TableView>
+                  <VBox prefHeight="398.0" prefWidth="296.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView fx:id="userTableView" prefHeight="398.0" prefWidth="296.0">
+                          <columns>
+                            <TableColumn fx:id="firstNameColumn" prefWidth="75.0" text="First name" />
+                            <TableColumn fx:id="lastNameColumn" prefWidth="75.0" text="Last name" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Button mnemonicParsing="false" onAction="#startTraining" prefHeight="100.0" prefWidth="296.0" text="Start training" />
+                     </children>
+                  </VBox>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="338.0">
@@ -43,11 +49,11 @@
                     </rowConstraints>
                      <children>
                         <Label text="bicycle" />
-                        <Label text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="bicycleLabel" text="Not selected" GridPane.columnIndex="1" />
                         <Label text="run" GridPane.rowIndex="1" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="runLabel" text="Not selected" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label text="swim" GridPane.rowIndex="2" />
-                        <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="swimLabel" text="Not selected" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                   <ButtonBar prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">

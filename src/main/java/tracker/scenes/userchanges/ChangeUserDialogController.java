@@ -73,7 +73,6 @@ public class ChangeUserDialogController {
       alert.showAndWait();
       return false;
     }
-
   }
 
   public static void showAsDialog(MainApp app, @NotNull User user) {
