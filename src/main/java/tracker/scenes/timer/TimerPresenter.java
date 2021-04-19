@@ -1,5 +1,6 @@
 package tracker.scenes.timer;
 
+import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
@@ -17,7 +18,6 @@ public class TimerPresenter {
   private final ObservableList<CaloriesCalculable> activities = FXCollections.observableArrayList();
 
   private User selectedUser;
-  private boolean isStarted = false;   
   private OnTimerTickListener onTimerTickListener;
   private int selectedMenuIndex = 0;
 
@@ -53,27 +53,34 @@ public class TimerPresenter {
   }
 
   public void startOrPauseTimer() {
-    if (isStarted) {
-      isStarted = false;
-      timeline.stop();
-    } else {
-      isStarted = true;
-      timeline.play();
-    }
+    if (isStarted()) timeline.stop(); else timeline.play();
   }
 
   public String clearTimerAndGetInitText() {
-    isStarted = false;
     activities.get(selectedMenuIndex).currentTimer = 0;
     timeline.stop();
     return createTimerText(activities.get(selectedMenuIndex).currentTimer);
   }
 
-  public boolean isStarted() {
-    return isStarted;
+  public String resetNewActivityTimer(int newIndex) {
+    selectedMenuIndex = newIndex;
+    timeline.stop();
+    return createTimerText(activities.get(selectedMenuIndex).currentTimer);
   }
 
-  public void setSelectedMenuIndex(int selectedMenuIndex) {
-    this.selectedMenuIndex = selectedMenuIndex;
+  public void saveResults() {
+    for (CaloriesCalculable caloriesCalculable : activities) {
+      if (caloriesCalculable instanceof BicycleActivity)
+        selectedUser.addBicycleCalories(caloriesCalculable.calculateCaloriesLoss());
+      else if (caloriesCalculable instanceof RunActivity)
+        selectedUser.addRunningCalories(caloriesCalculable.calculateCaloriesLoss());
+      else if (caloriesCalculable instanceof SwimActivity)
+        selectedUser.addSwimmingCalories(caloriesCalculable.calculateCaloriesLoss());
+    }
   }
+
+  public boolean isStarted() {
+    return timeline.getStatus() == Animation.Status.RUNNING;
+  }
+
 }

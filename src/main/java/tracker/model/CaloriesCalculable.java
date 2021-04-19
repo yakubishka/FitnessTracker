@@ -22,8 +22,8 @@ public abstract class CaloriesCalculable {
 
   public int currentTimer = 0;
 
-  public double calculateCaloriesLoss(long time) {
-    return time * getCaloriesLossPerSecond();
+  public int calculateCaloriesLoss() {
+    return (int)(currentTimer * getCaloriesLossPerSecond());
   }
 
   @Override

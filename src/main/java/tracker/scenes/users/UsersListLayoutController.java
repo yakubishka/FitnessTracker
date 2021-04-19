@@ -35,6 +35,7 @@ public class UsersListLayoutController extends BaseViewController {
   private void initialize() {
     firstNameColumn.setCellValueFactory(cellData -> cellData.getValue().firstNameProperty());
     lastNameColumn.setCellValueFactory(cellData -> cellData.getValue().lastNameProperty());
+
     userTableView.setItems(presenter.getUsers());
     userTableView.getSelectionModel().selectedItemProperty().addListener(
         (observable, oldValue, newValue) -> showStatistic(newValue)
@@ -49,9 +50,9 @@ public class UsersListLayoutController extends BaseViewController {
 
   @FXML
   private void showStatistic(User user) {
-    bicycleLabel.setText(user.getBicycleCaloriesLoss() + "");
-    runLabel.setText(user.getRunningCaloriesLoss() + "");
-    swimLabel.setText(user.getSwimmingCaloriesLoss() + "");
+    bicycleLabel.textProperty().bind(user.bicycleCaloriesLossProperty().asString());
+    runLabel.textProperty().bind(user.runningCaloriesLossProperty().asString());
+    swimLabel.textProperty().bind(user.swimmingCaloriesLossProperty().asString());
   }
 
   @FXML

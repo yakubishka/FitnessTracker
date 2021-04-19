@@ -85,6 +85,23 @@ public class User {
     this.bicycleCaloriesLoss.set(bicycleCaloriesLoss);
   }
 
+  public void addBicycleCalories(int caloriesToAdd) {
+    int valueToSet = bicycleCaloriesLoss.getValue() + caloriesToAdd;
+    bicycleCaloriesLoss.setValue(valueToSet);
+  }
+
+  public void addRunningCalories(int caloriesToAdd) {
+    int valueToSet = runningCaloriesLoss.getValue() + caloriesToAdd;
+    runningCaloriesLoss.setValue(valueToSet);
+  }
+
+  public void addSwimmingCalories(int caloriesToAdd) {
+    int valueToSet = swimmingCaloriesLoss.getValue() + caloriesToAdd;
+    swimmingCaloriesLoss.setValue(valueToSet);
+  }
+
+
+
   public boolean isEmpty() {
     return firstName.isEmpty().get() && lastName.isEmpty().get();
   }

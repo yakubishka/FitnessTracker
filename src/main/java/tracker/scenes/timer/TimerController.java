@@ -25,7 +25,11 @@ public class TimerController {
   @FXML
   private Label timerLabel;
 
-  private final TimerPresenter presenter = new TimerPresenter(timerLabel::setText);
+  private Stage dialogStage;
+
+  private final TimerPresenter presenter = new TimerPresenter((timerText) -> {
+    timerLabel.setText(timerText);
+  });
 
   @FXML
   private void initialize() {
@@ -33,7 +37,8 @@ public class TimerController {
     activityListView.setItems(presenter.getActivities());
     timerLabel.setText(presenter.clearTimerAndGetInitText());
     activityListView.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
-      presenter.setSelectedMenuIndex((int)newValue);
+      startPauseButton.setText(StringRes.START);
+      timerLabel.setText(presenter.resetNewActivityTimer((int)newValue));
     });
   }
 
@@ -49,6 +54,12 @@ public class TimerController {
   @FXML
   private void clearTimer() {
     timerLabel.setText(presenter.clearTimerAndGetInitText());
+  }
+
+  @FXML
+  private void saveAndExitAction() {
+    presenter.saveResults();
+    dialogStage.close();
   }
 
   public void setUser(User user) {
@@ -67,7 +78,11 @@ public class TimerController {
         .build()
         .createDialogStage();
 
+    controller.setDialogStage(dialogStage);
     dialogStage.showAndWait();
   }
 
+  public void setDialogStage(Stage dialogStage) {
+    this.dialogStage = dialogStage;
+  }
 }

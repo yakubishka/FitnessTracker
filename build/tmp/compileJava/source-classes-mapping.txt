@@ -1,44 +1,44 @@
 tracker/app/DialogStageHelper.java
  tracker.app.DialogStageHelper
  tracker.app.DialogStageHelper$Builder
-tracker/scenes/userchanges/ChangeUserDialogController.java
- tracker.scenes.userchanges.ChangeUserDialogController
-tracker/model/Task.java
- tracker.model.Task
+tracker/utils/WindowConstants.java
+ tracker.utils.WindowConstants
+tracker/model/activities/SwimActivity.java
+ tracker.model.activities.SwimActivity
 tracker/scenes/timer/OnTimerTickListener.java
  tracker.scenes.timer.OnTimerTickListener
 tracker/utils/TimeUtils.java
  tracker.utils.TimeUtils
-tracker/model/User.java
- tracker.model.User
+tracker/app/MainApp.java
+ tracker.app.MainApp
 tracker/architecture/BaseViewController.java
  tracker.architecture.BaseViewController
-tracker/scenes/users/UsersListPresenter.java
- tracker.scenes.users.UsersListPresenter
+tracker/model/activities/RunActivity.java
+ tracker.model.activities.RunActivity
 tracker/utils/storage/PreferenceStorage.java
  tracker.utils.storage.PreferenceStorage
 tracker/utils/StringRes.java
  tracker.utils.StringRes
-tracker/app/MainApp.java
- tracker.app.MainApp
-tracker/utils/WindowConstants.java
- tracker.utils.WindowConstants
+tracker/model/Task.java
+ tracker.model.Task
+tracker/model/CaloriesCalculable.java
+ tracker.model.CaloriesCalculable
+ tracker.model.CaloriesCalculable$ActivityType
 tracker/utils/storage/JAXBConverter.java
  tracker.utils.storage.JAXBConverter
 tracker/utils/storage/UsersPreferences.java
  tracker.utils.storage.UsersPreferences
-tracker/model/activities/SwimActivity.java
- tracker.model.activities.SwimActivity
 tracker/model/activities/BicycleActivity.java
  tracker.model.activities.BicycleActivity
-tracker/model/activities/RunActivity.java
- tracker.model.activities.RunActivity
+tracker/scenes/userchanges/ChangeUserDialogController.java
+ tracker.scenes.userchanges.ChangeUserDialogController
+tracker/model/User.java
+ tracker.model.User
+tracker/scenes/users/UsersListPresenter.java
+ tracker.scenes.users.UsersListPresenter
 tracker/scenes/timer/TimerController.java
  tracker.scenes.timer.TimerController
 tracker/scenes/timer/TimerPresenter.java
  tracker.scenes.timer.TimerPresenter
-tracker/model/CaloriesCalculable.java
- tracker.model.CaloriesCalculable
- tracker.model.CaloriesCalculable$ActivityType
 tracker/scenes/users/UsersListLayoutController.java
  tracker.scenes.users.UsersListLayoutController
