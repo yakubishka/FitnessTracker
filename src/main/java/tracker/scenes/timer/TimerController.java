@@ -12,7 +12,8 @@ import tracker.app.DialogStageHelper;
 import tracker.app.MainApp;
 import tracker.model.CaloriesCalculable;
 import tracker.model.User;
-import tracker.utils.StringRes;
+import tracker.resources.LayoutRes;
+import tracker.resources.StringRes;
 
 public class TimerController {
 
@@ -67,7 +68,7 @@ public class TimerController {
   }
 
   public static void showAsDialog(MainApp app, @NotNull User user) {
-    FXMLLoader loader = app.createLoader("TimerDialogLayout.fxml");
+    FXMLLoader loader = app.createLoader(LayoutRes.TIMER_DIALOG_LAYOUT);
     AnchorPane dialogLayout = app.getPaneFromLoader(loader);
     TimerController controller = loader.getController();
     controller.setUser(user);
@@ -85,4 +86,5 @@ public class TimerController {
   public void setDialogStage(Stage dialogStage) {
     this.dialogStage = dialogStage;
   }
+
 }

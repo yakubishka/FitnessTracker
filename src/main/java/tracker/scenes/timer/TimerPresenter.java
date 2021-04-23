@@ -11,7 +11,7 @@ import tracker.model.User;
 import tracker.model.activities.BicycleActivity;
 import tracker.model.activities.RunActivity;
 import tracker.model.activities.SwimActivity;
-import tracker.utils.StringRes;
+import tracker.resources.StringRes;
 
 public class TimerPresenter {
 

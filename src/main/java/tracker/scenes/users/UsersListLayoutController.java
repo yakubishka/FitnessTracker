@@ -4,10 +4,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import tracker.app.MainApp;
 import tracker.architecture.BaseViewController;
 import tracker.model.User;
 import tracker.scenes.timer.TimerController;
 import tracker.scenes.userchanges.ChangeUserDialogController;
+
+import java.util.List;
 
 public class UsersListLayoutController extends BaseViewController {
 
@@ -42,10 +45,20 @@ public class UsersListLayoutController extends BaseViewController {
     );
   }
 
+  @Override
+  public void setMainApp(MainApp app) {
+    super.setMainApp(app);
+    List<User> savedUsers = app.readFromFile();
+    if (savedUsers != null)
+      presenter.addAllToList(savedUsers);
+  }
+
   @FXML
   private void deleteUser() {
     int selectedUserIndex = userTableView.getSelectionModel().getSelectedIndex();
     presenter.deleteUserByIndex(selectedUserIndex);
+    if (app != null)
+      app.saveToFile(presenter.getUsers());
   }
 
   @FXML
@@ -57,8 +70,10 @@ public class UsersListLayoutController extends BaseViewController {
 
   @FXML
   private void editUser() {
-    if (app != null)
+    if (app != null) {
       ChangeUserDialogController.showAsDialog(app, userTableView.getSelectionModel().getSelectedItem());
+      app.saveToFile(presenter.getUsers());
+    }
   }
 
   @FXML
@@ -67,13 +82,16 @@ public class UsersListLayoutController extends BaseViewController {
       User userToAdd = new User("", "");
       ChangeUserDialogController.showAsDialog(app, userToAdd);
       presenter.addToList(userToAdd);
+      app.saveToFile(presenter.getUsers());
     }
   }
 
   @FXML
   private void startTraining() {
-    if (app != null)
+    if (app != null) {
       TimerController.showAsDialog(app, userTableView.getSelectionModel().getSelectedItem());
+      app.saveToFile(presenter.getUsers());
+    }
   }
 
 }

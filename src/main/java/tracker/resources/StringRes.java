@@ -1,4 +1,4 @@
-package tracker.utils;
+package tracker.resources;
 
 public class StringRes {
 

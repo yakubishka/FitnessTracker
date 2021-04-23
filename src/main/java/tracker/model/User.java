@@ -13,6 +13,10 @@ public class User {
   private final IntegerProperty runningCaloriesLoss;
   private final IntegerProperty bicycleCaloriesLoss;
 
+  public User() {
+    this(null, null);
+  }
+
   public User(String firstName, String lastName) {
     this(firstName, lastName, 0, 0, 0);
   }

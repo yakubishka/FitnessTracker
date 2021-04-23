@@ -7,11 +7,12 @@ import java.io.File;
 
 public class JAXBConverter {
 
-  public static <T> T loadFromFile(File file, Class<T> classToConvert) {
+  public static <T> Object loadFromFile(File file, Class<T> classToConvert) {
     try {
       JAXBContext jaxbContext = JAXBContext.newInstance(classToConvert);
       Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-      return (T) unmarshaller.unmarshal(file);
+      System.out.println(file);
+      return unmarshaller.unmarshal(file);
     } catch (Exception e) {
       e.printStackTrace();
       return null;

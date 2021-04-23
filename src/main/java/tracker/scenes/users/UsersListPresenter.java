@@ -4,14 +4,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import tracker.model.User;
 
+import java.util.List;
+
 public class UsersListPresenter {
 
   private final ObservableList<User> users = FXCollections.observableArrayList();
 
-  public UsersListPresenter() {
-    users.add(new User("Petr", "Stepanov", 24, 20, 12));
-    users.add(new User("Stepan", "Fedorov"));
-  }
+  public UsersListPresenter(){ }
 
   public ObservableList<User> getUsers() {
     return users;
@@ -23,6 +22,10 @@ public class UsersListPresenter {
 
   public void addToList(User user) {
     users.add(user);
+  }
+
+  public void addAllToList(List<User> users) {
+    this.users.addAll(users);
   }
 
 }

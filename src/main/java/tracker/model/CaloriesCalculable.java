@@ -1,6 +1,6 @@
 package tracker.model;
 
-import tracker.utils.StringRes;
+import tracker.resources.StringRes;
 
 public abstract class CaloriesCalculable {
 

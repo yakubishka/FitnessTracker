@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import tracker.app.DialogStageHelper;
 import tracker.app.MainApp;
 import tracker.model.User;
-import tracker.utils.StringRes;
+import tracker.resources.StringRes;
 
 public class ChangeUserDialogController {
 
