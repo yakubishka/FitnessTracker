@@ -11,7 +11,6 @@ public class JAXBConverter {
     try {
       JAXBContext jaxbContext = JAXBContext.newInstance(classToConvert);
       Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-      System.out.println(file);
       return unmarshaller.unmarshal(file);
     } catch (Exception e) {
       e.printStackTrace();

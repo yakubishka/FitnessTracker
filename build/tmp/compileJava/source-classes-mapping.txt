@@ -9,8 +9,8 @@ tracker/model/activities/SwimActivity.java
  tracker.model.activities.SwimActivity
 tracker/scenes/timer/OnTimerTickListener.java
  tracker.scenes.timer.OnTimerTickListener
-tracker/utils/TimeUtils.java
- tracker.utils.TimeUtils
+tracker/app/MainApp.java
+ tracker.app.MainApp
 tracker/model/User.java
  tracker.model.User
 tracker/architecture/BaseViewController.java
@@ -28,8 +28,8 @@ tracker/scenes/timer/TimerPresenter.java
 tracker/model/CaloriesCalculable.java
  tracker.model.CaloriesCalculable
  tracker.model.CaloriesCalculable$ActivityType
-tracker/utils/storage/JAXBConverter.java
- tracker.utils.storage.JAXBConverter
+tracker/scenes/users/UsersListLayoutController.java
+ tracker.scenes.users.UsersListLayoutController
 tracker/utils/storage/UsersPreferences.java
  tracker.utils.storage.UsersPreferences
 tracker/model/activities/BicycleActivity.java
@@ -38,11 +38,9 @@ tracker/resources/WindowConstants.java
  tracker.resources.WindowConstants
 tracker/model/Task.java
  tracker.model.Task
-tracker/app/MainApp.java
- tracker.app.MainApp
-tracker/model/activities/RunActivity.java
- tracker.model.activities.RunActivity
 tracker/scenes/timer/TimerController.java
  tracker.scenes.timer.TimerController
-tracker/scenes/users/UsersListLayoutController.java
- tracker.scenes.users.UsersListLayoutController
+tracker/model/activities/RunActivity.java
+ tracker.model.activities.RunActivity
+tracker/utils/storage/JAXBConverter.java
+ tracker.utils.storage.JAXBConverter
